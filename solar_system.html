@@ -12,17 +12,85 @@
 
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #030b20;
+    overflow: hidden;
 }
+
+/* STAR BACKGROUND */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #030b20;
+    overflow: hidden;
+
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, white 99%, transparent),
+        radial-gradient(1px 1px at 25% 75%, white 99%, transparent),
+        radial-gradient(2px 2px at 80% 30%, #bfdbfe 99%, transparent),
+        radial-gradient(1px 1px at 60% 15%, white 99%, transparent),
+        radial-gradient(2px 2px at 90% 80%, white 99%, transparent),
+        radial-gradient(1px 1px at 45% 40%, #93c5fd 99%, transparent),
+        radial-gradient(2px 2px at 15% 90%, white 99%, transparent),
+        radial-gradient(1px 1px at 70% 65%, white 99%, transparent),
+        radial-gradient(2px 2px at 35% 10%, #bfdbfe 99%, transparent),
+        radial-gradient(1px 1px at 95% 50%, white 99%, transparent);
+
+    background-size:
+        250px 250px,
+        180px 180px,
+        300px 300px,
+        220px 220px,
+        270px 270px,
+        200px 200px,
+        320px 320px,
+        240px 240px,
+        280px 280px,
+        190px 190px;
+}
+
+/* GENTLE TWINKLING */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white 99%, transparent),
+        radial-gradient(2px 2px at 75% 60%, white 99%, transparent),
+        radial-gradient(1px 1px at 50% 85%, #93c5fd 99%, transparent),
+        radial-gradient(2px 2px at 88% 15%, white 99%, transparent);
+
+    background-size: 350px 300px;
+    animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 
 .solar-system {
     position: relative;
-    width:  min(95vw, 95vh);
-    height: min(95vw, 95vh);
+    width: min(95vw, 95vh, 710px);
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    margin: auto;
 }
 
 /* BIGGER SUN */
@@ -251,8 +319,10 @@ h1{
     color: White;
     font: bold;
     font-size: 70px;
-    margin-left: 30px;
+    margin: auto;
+    text-decoration: underline;
 }
+
 </style>
 </head>
 
